@@ -35,3 +35,22 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2020-12-15 01:19:28.914  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : Starting AddressBookApplication using Java 11.0.8 on MSI with PID 5428 (C:\Users\aaada\Dev\eclipse-workspace\AddressBookApplication\target\classes started by aaada in C:\Users\aaada\Dev\eclipse-workspace\AddressBookApplication)
 2020-12-15 01:19:28.917 DEBUG 5428 --- [restartedMain] c.b.a.AddressBookApplication             : Running with Spring Boot v2.4.1, Spring v5.3.2
 2020-12-15 01:19:28.918  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : The following profiles are active: dev
+2020-12-15 01:19:31.801  WARN 5428 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-15 01:19:32.096  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : Started AddressBookApplication in 3.539 seconds (JVM running for 4.801)
+2020-12-15 01:19:32.099  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : AddressBook Application Started in DEV Environment
+2020-12-15 01:19:32.100  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : AddressBook DB User is root Environment
+2020-12-15 01:34:10.273  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : Starting AddressBookApplication using Java 11.0.8 on MSI with PID 5428 (C:\Users\aaada\Dev\eclipse-workspace\AddressBookApplication\target\classes started by aaada in C:\Users\aaada\Dev\eclipse-workspace\AddressBookApplication)
+2020-12-15 01:34:10.273 DEBUG 5428 --- [restartedMain] c.b.a.AddressBookApplication             : Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-15 01:34:10.273  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : The following profiles are active: dev
+2020-12-15 01:34:10.778  WARN 5428 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-15 01:34:10.876  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : Started AddressBookApplication in 0.63 seconds (JVM running for 883.58)
+2020-12-15 01:34:10.878  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : AddressBook Application Started in DEV Environment
+2020-12-15 01:34:10.879  INFO 5428 --- [restartedMain] c.b.a.AddressBookApplication             : AddressBook DB User is addressbookuser Environment
+2020-12-15 01:34:22.952  INFO 2488 --- [restartedMain] c.b.a.AddressBookApplication             : Starting AddressBookApplication using Java 11.0.8 on MSI with PID 2488 (C:\Users\aaada\Dev\eclipse-workspace\AddressBookApplication\target\classes started by aaada in C:\Users\aaada\Dev\eclipse-workspace\AddressBookApplication)
+2020-12-15 01:34:22.955 DEBUG 2488 --- [restartedMain] c.b.a.AddressBookApplication             : Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-15 01:34:22.957  INFO 2488 --- [restartedMain] c.b.a.AddressBookApplication             : The following profiles are active: dev
+2020-12-15 01:34:25.707  WARN 2488 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-15 01:34:26.004  INFO 2488 --- [restartedMain] c.b.a.AddressBookApplication             : Started AddressBookApplication in 3.419 seconds (JVM running for 4.703)
+2020-12-15 01:34:26.007  INFO 2488 --- [restartedMain] c.b.a.AddressBookApplication             : AddressBook Application Started in DEV Environment
+2020-12-15 01:34:26.008  INFO 2488 --- [restartedMain] c.b.a.AddressBookApplication             : AddressBook DB User is addressbookuser Environment
+2020-12-15 01:35:21.973  WARN 2488 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
