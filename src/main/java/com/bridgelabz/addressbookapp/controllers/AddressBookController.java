@@ -1,12 +1,11 @@
 package com.bridgelabz.addressbookapp.controllers;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,52 +17,50 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.addressbookapp.dto.AddressBookDTO;
 import com.bridgelabz.addressbookapp.dto.ResponseDTO;
-import com.bridgelabz.addressbookapp.model.AddressBookData;
 import com.bridgelabz.addressbookapp.services.IAddressBookService;
 
+@CrossOrigin(origins = "http://localhost:3001", allowedHeaders = "*")
 @RestController
 @RequestMapping(value = "/addressbookservice")
 public class AddressBookController {
-	
+
 	@Autowired
 	private IAddressBookService addressBookService;
 
 	@GetMapping(value = { "", "/", "/get" })
 	public ResponseEntity<ResponseDTO> getAddressBookContactData() {
-		List<AddressBookData> contactDataList = addressBookService.getAddressBookContactData();
-		ResponseDTO responseDTO = new ResponseDTO("Get Call Successful", contactDataList);
+		ResponseDTO responseDTO = new ResponseDTO("Get Call Successful",
+				addressBookService.getAddressBookContactData());
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
 	@GetMapping("/get/{id}")
-	public ResponseEntity<ResponseDTO> getAddressBookContactData(@PathVariable("id") int id) {
-		AddressBookData contactData = null;
-		contactData = addressBookService.getAddressBookContactDataById(id);
-		ResponseDTO responseDTO = new ResponseDTO("Get Call Successfull for id: " + id, contactData);
+	public ResponseEntity<ResponseDTO> getAddressBookContactData(@PathVariable("id") Long id) {
+		ResponseDTO responseDTO = new ResponseDTO("Get Call Successfull for id: " + id, 
+				addressBookService.getAddressBookContactDataById(id));
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
 	@PostMapping("/create")
 	public ResponseEntity<ResponseDTO> addAddressBookContactData(@Valid @RequestBody AddressBookDTO addressBookDTO) {
-		AddressBookData contactData = null;
-		contactData = addressBookService.createAddressBookContactData(addressBookDTO);
-		ResponseDTO responseDTO = new ResponseDTO("Created Address Book Contact Data Successfully", contactData);
-		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+		ResponseDTO responseDTO = new ResponseDTO("Created Address Book Contact Data Successfully", 
+				addressBookService.createAddressBookContactData(addressBookDTO));
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.CREATED);
 	}
 
 	@PutMapping("/update/{id}")
-	public ResponseEntity<ResponseDTO> updateAddressBookContactData(@PathVariable("id") int id,
+	public ResponseEntity<ResponseDTO> updateAddressBookContactData(@PathVariable("id") Long id,
 			@Valid @RequestBody AddressBookDTO addressBookDTO) {
-		AddressBookData contactData = null;
-		contactData = addressBookService.updateAddressBookContactData(id, addressBookDTO);
-		ResponseDTO responseDTO = new ResponseDTO("Updated Address Book Contact Data Successfully", contactData);
+		ResponseDTO responseDTO = new ResponseDTO("Updated Address Book Contact Data Successfully", 
+				addressBookService.updateAddressBookContactData(id, addressBookDTO));
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<ResponseDTO> deleteAddressBookContactData(@PathVariable("id") int id) {
+	public ResponseEntity<ResponseDTO> deleteAddressBookContactData(@PathVariable("id") Long id) {
 		addressBookService.deleteAddressBookContactData(id);
-		ResponseDTO responseDTO = new ResponseDTO("Deleted Address Book Contact Data Successfully", "Deleted id: " + id);
+		ResponseDTO responseDTO = new ResponseDTO("Deleted Address Book Contact Data Successfully",
+				"Deleted id: " + id);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 }
